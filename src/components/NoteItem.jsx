@@ -18,7 +18,12 @@ export function NoteItem({
         {title}
       </h4>
       <p className="note-item__date">
-        {createdAt}
+        {new Date(createdAt).toLocaleDateString('id-ID', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
+        })}
       </p>
       <p className="note-item__body">
         {body}
